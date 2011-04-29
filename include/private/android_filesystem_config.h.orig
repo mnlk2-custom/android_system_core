@@ -53,10 +53,14 @@
 #define AID_KEYSTORE      1017  /* keystore subsystem */
 #define AID_USB           1018  /* USB devices */
 #define AID_GPS           1021  /* GPS daemon */
+<<<<<<< HEAD
+#define AID_NFC           1022  /* nfc subsystem */
+=======
 #define AID_UNUSED1       1022  /* deprecated, DO NOT USE */
 #define AID_RFU1          1023  /* RFU */
 #define AID_RFU2          1024  /* RFU */
 #define AID_NFC           1025  /* nfc subsystem */
+>>>>>>> c4956766c064f4f4f439939d2376fcd087b996ce
 
 #define AID_SHELL         2000  /* adb and debug shell user */
 #define AID_CACHE         2001  /* cache access */
@@ -149,7 +153,10 @@ static struct fs_path_config android_dirs[] = {
     { 00755, AID_ROOT,   AID_SHELL,  "system/xbin" },
     { 00755, AID_ROOT,   AID_ROOT,   "system/etc/ppp" },
     { 00777, AID_ROOT,   AID_ROOT,   "sdcard" },
-    { 00771, AID_SYSTEM, AID_SYSTEM, "system/sd" },
+<<<<<<< HEAD
+    { 00771, AID_SYSTEM, AID_SYSTEM, "sd-ext" },
+=======
+>>>>>>> c4956766c064f4f4f439939d2376fcd087b996ce
     { 00755, AID_ROOT,   AID_ROOT,   0 },
 };
 
@@ -192,14 +199,20 @@ static struct fs_path_config android_files[] = {
 		/* the following file is INTENTIONALLY set-uid, and IS included
 		 * in user builds. */
     { 06750, AID_ROOT,      AID_SHELL,     "system/bin/run-as" },
+<<<<<<< HEAD
     { 06755, AID_ROOT,      AID_ROOT,      "system/xbin/hcitool" },
+=======
+>>>>>>> c4956766c064f4f4f439939d2376fcd087b996ce
     { 00755, AID_ROOT,      AID_SHELL,     "system/bin/*" },
     { 00755, AID_ROOT,      AID_SHELL,     "system/xbin/*" },
     { 00755, AID_ROOT,      AID_SHELL,     "system/vendor/bin/*" },
     { 00750, AID_ROOT,      AID_SHELL,     "sbin/*" },
     { 00755, AID_ROOT,      AID_ROOT,      "bin/*" },
     { 00750, AID_ROOT,      AID_SHELL,     "init*" },
+<<<<<<< HEAD
     { 00750, AID_ROOT,      AID_SHELL,     "system/etc/init.d/*" },
+=======
+>>>>>>> c4956766c064f4f4f439939d2376fcd087b996ce
     { 00644, AID_ROOT,      AID_ROOT,       0 },
 };
 
@@ -236,3 +249,7 @@ static inline void fs_config(const char *path, int dir,
 }
 #endif
 #endif
+<<<<<<< HEAD
+
+=======
+>>>>>>> c4956766c064f4f4f439939d2376fcd087b996ce

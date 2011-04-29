@@ -18,7 +18,10 @@ loglevel 3
     export ASEC_MOUNTPOINT /mnt/asec
     export LOOP_MOUNTPOINT /mnt/obb
     export BOOTCLASSPATH /system/framework/core.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/core-junit.jar
+<<<<<<< HEAD
     export TERMINFO /system/etc/terminfo
+=======
+>>>>>>> c4956766c064f4f4f439939d2376fcd087b996ce
 
 # Backward compatibility
     symlink /system/etc /etc
@@ -42,7 +45,11 @@ loglevel 3
 
     mkdir /system
     mkdir /data 0771 system system
+<<<<<<< HEAD
+    mkdir /cache 0771 system cache
+=======
     mkdir /cache 0770 system cache
+>>>>>>> c4956766c064f4f4f439939d2376fcd087b996ce
     mkdir /config 0500 root root
 
     # Directory for putting things only root should see.
@@ -127,7 +134,11 @@ on post-fs
 
     # Same reason as /data above
     chown system cache /cache
+<<<<<<< HEAD
+    chmod 0771 /cache
+=======
     chmod 0770 /cache
+>>>>>>> c4956766c064f4f4f439939d2376fcd087b996ce
 
     # This may have been created by the recovery system with odd permissions
     chown system cache /cache/recovery
@@ -167,10 +178,13 @@ on post-fs
     chown system system /data/dalvik-cache
     chmod 0771 /data/dalvik-cache
 
+<<<<<<< HEAD
     mkdir /cache/dalvik-cache 0771 system system
     chown system system /cache/dalvik-cache
     chmod 0771 /cache/dalvik-cache
 
+=======
+>>>>>>> c4956766c064f4f4f439939d2376fcd087b996ce
     # create the lost+found directories, so as to enforce our permissions
     mkdir /data/lost+found 0770
     mkdir /cache/lost+found 0770
@@ -278,10 +292,13 @@ on boot
     setprop net.tcp.buffersize.edge    4093,26280,35040,4096,16384,35040
     setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
 
+<<<<<<< HEAD
     start sysinit
 
 on property:mcr.filesystem.ready=1
 
+=======
+>>>>>>> c4956766c064f4f4f439939d2376fcd087b996ce
     class_start default
 
 ## Daemon processes to be run by init.
@@ -417,8 +434,11 @@ service dumpstate /system/bin/dumpstate -s
     socket dumpstate stream 0660 shell log
     disabled
     oneshot
+<<<<<<< HEAD
 
 # Execute files in /etc/init.d before booting
 service sysinit /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d
     disabled
     oneshot
+=======
+>>>>>>> c4956766c064f4f4f439939d2376fcd087b996ce
